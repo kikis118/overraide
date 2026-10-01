@@ -1,0 +1,98 @@
+# Harvard reference list. Each key is the id you use in posts (refs: [id], reading: id, film.ref: id).
+# Seeded from the project notes: CHECK EVERY ENTRY against the actual source (author initials,
+# publisher, pages, DOI), then set `verified: true`. Unverified entries show a ⚠ on the site.
+# kinds: book | chapter | article | film | web | artwork
+
+prince-hensley-1992:
+  kind: article
+  authors: ["Prince, S.", "Hensley, W.E."]
+  year: 1992
+  title: "The Kuleshov effect: recreating the classic experiment"
+  container: "Cinema Journal"
+  volume: 31
+  issue: 2
+mobbs-2006:
+  kind: article
+  authors: ["Mobbs, D.", "TODO: full author list"]
+  year: 2006
+  title: "The Kuleshov Effect: the influence of contextual framing on emotional attributions"
+  container: "Social Cognitive and Affective Neuroscience"
+  volume: 1
+  issue: 2
+man-with-a-movie-camera:
+  kind: film
+  authors: ["Vertov, D."]
+  year: 1929
+  title: "Man with a Movie Camera"
+  country: "USSR"
+eye-machine:
+  kind: artwork
+  authors: ["Farocki, H."]
+  year: "2001–03"
+  title: "Eye/Machine I–III"
+  medium: "Video installation"
+robertson-2023:
+  kind: article
+  authors: ["Robertson, C.E.", "TODO: full author list"]
+  year: 2023
+  title: "Negativity drives online news consumption"
+  container: "Nature Human Behaviour"
+baumeister-2001:
+  kind: article
+  authors: ["Baumeister, R.F.", "Bratslavsky, E.", "Finkenauer, C.", "Vohs, K.D."]
+  year: 2001
+  title: "Bad is stronger than good"
+  container: "Review of General Psychology"
+arnulf-rainer:
+  kind: film
+  authors: ["Kubelka, P."]
+  year: 1960
+  title: "Arnulf Rainer"
+  country: "Austria"
+the-flicker:
+  kind: film
+  authors: ["Conrad, T."]
+  year: 1966
+  title: "The Flicker"
+  country: "USA"
+hypernormalisation:
+  kind: film
+  authors: ["Curtis, A."]
+  year: 2016
+  title: "HyperNormalisation"
+  country: "UK"
+  publisher: "BBC"
+debord-1967:
+  kind: book
+  authors: ["Debord, G."]
+  year: 1967
+  title: "The Society of the Spectacle"
+  publisher: "TODO: the edition you read (translator, publisher, year)"
+murch-1995:
+  kind: book
+  authors: ["Murch, W."]
+  year: 1995
+  title: "In the Blink of an Eye"
+  publisher: "TODO: the edition you read"
+menkman-2011:
+  kind: book
+  authors: ["Menkman, R."]
+  year: 2011
+  title: "The Glitch Moment(um)"
+  place: "Amsterdam"
+  publisher: "Institute of Network Cultures"
+opray-2003:
+  kind: book
+  authors: ["O'Pray, M."]
+  year: 2003
+  title: "Avant-Garde Film: Forms, Themes and Passions"
+ramey-2016:
+  kind: book
+  authors: ["Ramey, K."]
+  year: 2016
+  title: "Experimental Filmmaking: Break the Machine"
+russett-starr:
+  kind: book
+  authors: ["Russett, R.", "Starr, C."]
+  year: 1998
+  title: "Experimental Animation (TODO: check full title and edition year)"

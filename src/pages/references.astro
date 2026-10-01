@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { harvard, sortKey } from "../lib/harvard";
+
+const refs = (await getCollection("references")).sort((a, b) => sortKey(a.data).localeCompare(sortKey(b.data)));
+const groups = [
+  ["Reading", refs.filter((r) => ["book", "chapter", "article", "web"].includes(r.data.kind))],
+  ["Films and works", refs.filter((r) => ["film", "artwork"].includes(r.data.kind))],
+] as const;
+const pending = refs.filter((r) => !r.data.verified).length;
+---
+<Base title="References">
+  <h1>References</h1>
+  <p class="meta">Harvard style. Generated from <code>src/data/references.yml</code>.</p>
+  {import.meta.env.DEV && pending > 0 && (
+    <p class="unverified">⚠ {pending} of {refs.length} references not yet verified against the source (only shown in dev).</p>
+  )}
+  {groups.map(([label, list]) => list.length > 0 && (
+    <>
+      <h2>{label}</h2>
+      <ul class="refs">
+        {list.map((r) => (
+          <li id={r.id}>
+            <span set:html={harvard(r.data)} />
+            {import.meta.env.DEV && !r.data.verified && <span class="unverified"> ⚠</span>}
+          </li>
+        ))}
+      </ul>
+    </>
+  ))}
+</Base>

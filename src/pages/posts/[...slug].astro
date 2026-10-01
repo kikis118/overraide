@@ -1,0 +1,61 @@
+---
+import { getCollection, getEntries, getEntry, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { POST_TYPES } from "../../content.config";
+import { harvard, sortKey } from "../../lib/harvard";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", (p) => import.meta.env.DEV || !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const fmt = (x: Date) => x.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+
+// every work this post points at, once, in Harvard order
+const ids = [...d.refs, d.film?.ref, d.reading].filter(Boolean) as { collection: "references"; id: string }[];
+const unique = [...new Map(ids.map((r) => [r.id, r])).values()];
+const refs = (await getEntries(unique)).filter(Boolean).sort((a, b) => sortKey(a.data).localeCompare(sortKey(b.data)));
+const reading = d.reading ? await getEntry(d.reading) : undefined;
+---
+<Base title={d.title} description={d.summary}>
+  <article>
+    <div class="meta">
+      <span class="tag">{POST_TYPES[d.type]}</span>
+      <span>Published <time datetime={d.date.toISOString()}>{fmt(d.date)}</time></span>
+      {d.day && <span>Shoot day {d.day}{d.setups?.length ? ` · setups ${d.setups.join(", ")}` : ""}</span>}
+    </div>
+    <h1>{d.title}</h1>
+
+    {d.film && (
+      <dl class="filmbox">
+        <dt>Film</dt><dd><i>{d.film.title}</i></dd>
+        <dt>Director</dt><dd>{d.film.director}</dd>
+        <dt>Year</dt><dd>{d.film.year}</dd>
+        <dt>Country</dt><dd>{d.film.country}</dd>
+      </dl>
+    )}
+    {reading && (
+      <div class="filmbox"><span style="color:var(--dim)">Reading · </span><span set:html={harvard(reading.data)} /></div>
+    )}
+
+    {d.cover && <img src={d.cover} alt="" />}
+    <Content />
+
+    {refs.length > 0 && (
+      <>
+        <h2>References</h2>
+        <ul class="refs">
+          {refs.map((r) => (
+            <li>
+              <span set:html={harvard(r!.data)} />
+              {import.meta.env.DEV && !r!.data.verified && <span class="unverified"> ⚠ unverified</span>}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+  </article>
+</Base>
