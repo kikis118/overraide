@@ -7,7 +7,7 @@ The developmental weblog (40% of CIN506) for my experimental film, published as 
 ## Write a post
 
 ```
-npm run new -- proposal "Proposal: Invisible Hand"
+npm run new -- proposal "Proposal"
 npm run new -- technical-test "Gaussian splat test"
 npm run new -- film-review "Man with a Movie Camera"
 npm run new -- reading-notes "O'Pray: Avant-Garde Film"
