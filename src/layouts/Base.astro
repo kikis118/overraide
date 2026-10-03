@@ -3,7 +3,7 @@ import "../styles/global.css";
 interface Props { title?: string; description?: string }
 const { title, description = "Developmental weblog for an experimental film about invisible editing." } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const siteName = "Invisible Hand · weblog";
+const siteName = "overraide";
 ---
 <!doctype html>
 <html lang="en">
@@ -17,7 +17,7 @@ const siteName = "Invisible Hand · weblog";
 <body>
   <header class="site">
     <div class="wrap">
-      <a class="name" href={`${base}/`}>INVISIBLE HAND</a>
+      <a class="name" href={`${base}/`}>OVERRAIDE</a>
       <nav>
         <a href={`${base}/`}>Posts</a>
         <a href={`${base}/references/`}>References</a>

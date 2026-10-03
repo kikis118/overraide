@@ -1,6 +1,6 @@
-# Invisible Hand: developmental weblog
+# overraide
 
-The public weblog (40% of CIN506) for the experimental film *Invisible Hand*. An Astro static site with a dark minimal theme, deployed to GitHub Pages.
+The developmental weblog (40% of CIN506) for my experimental film, published as **overraide**. An Astro static site with a dark minimal theme, deployed to GitHub Pages.
 
 > This repo is **public**. The film's private project folder (notes, tools, input logs, footage) stays in its own private folder and must never be copied in here.
 
@@ -57,8 +57,8 @@ npm run build      # check it builds before pushing
 
 ## Publish (first time)
 
-1. Create a **public** GitHub repo, e.g. `invisible-hand-weblog`.
+1. Create the GitHub repo `overraide`.
 2. In this folder: `git init`, commit, add the remote, push to `main`.
 3. On GitHub: Settings → Pages → Source: **GitHub Actions**.
 
-Every push to `main` then builds and deploys via `.github/workflows/deploy.yml` to `https://<user>.github.io/<repo>/`.
+Every push to `main` then builds and deploys via `.github/workflows/deploy.yml` to `https://kikis118.github.io/overraide/`.
