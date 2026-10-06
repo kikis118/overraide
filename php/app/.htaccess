@@ -1,0 +1,2 @@
+# Content, config and sessions must never be downloadable
+Require all denied

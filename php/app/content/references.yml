@@ -1,0 +1,160 @@
+# Harvard reference list. Each key is the id you use in posts (refs: [id], reading: id, film.ref: id).
+# CHECK EVERY ENTRY against the actual source (author initials, publisher, pages, edition),
+# then set `verified: true`. Unverified entries show a ⚠ on the site in dev mode.
+# kinds: book | chapter | article | film | web | artwork
+#
+# This version keeps every id from the original file, fills in the TODOs, and adds the
+# entries the new posts use (marked "# new").
+
+prince-hensley-1992:
+  kind: article
+  authors: ["Prince, S.", "Hensley, W.E."]
+  year: 1992
+  title: "The Kuleshov effect: recreating the classic experiment"
+  container: "Cinema Journal"
+  volume: 31
+  issue: 2
+  pages: "59–75"
+mobbs-2006:
+  kind: article
+  authors: ["Mobbs, D.", "Weiskopf, N.", "Lau, H.C.", "Featherstone, E.", "Dolan, R.J.", "Frith, C.D."]
+  year: 2006
+  title: "The Kuleshov effect: the influence of contextual framing on emotional attributions"
+  container: "Social Cognitive and Affective Neuroscience"
+  volume: 1
+  issue: 2
+  pages: "95–106"
+man-with-a-movie-camera:
+  kind: film
+  authors: ["Vertov, D."]
+  year: 1929
+  title: "Man with a Movie Camera"
+  country: "USSR"
+  publisher: "VUFKU"
+eye-machine:
+  kind: artwork
+  authors: ["Farocki, H."]
+  year: "2001–03"
+  title: "Eye/Machine I–III"
+  medium: "Video installation"
+robertson-2023:
+  kind: article
+  authors: ["Robertson, C.E.", "Pröllochs, N.", "Schwarzenegger, K.", "Pärnamets, P.", "Van Bavel, J.J.", "Feuerriegel, S."]
+  year: 2023
+  title: "Negativity drives online news consumption"
+  container: "Nature Human Behaviour"
+  volume: 7
+  issue: 5
+  pages: "812–822"
+baumeister-2001:
+  kind: article
+  authors: ["Baumeister, R.F.", "Bratslavsky, E.", "Finkenauer, C.", "Vohs, K.D."]
+  year: 2001
+  title: "Bad is stronger than good"
+  container: "Review of General Psychology"
+  volume: 5
+  issue: 4
+  pages: "323–370"
+arnulf-rainer:
+  kind: film
+  authors: ["Kubelka, P."]
+  year: 1960
+  title: "Arnulf Rainer"
+  country: "Austria"
+the-flicker:
+  kind: film
+  authors: ["Conrad, T."]
+  year: 1966
+  title: "The Flicker"
+  country: "USA"
+hypernormalisation:
+  kind: film
+  authors: ["Curtis, A."]
+  year: 2016
+  title: "HyperNormalisation"
+  country: "UK"
+  publisher: "BBC"
+debord-1967:
+  kind: book
+  authors: ["Debord, G."]
+  year: 1994
+  title: "The Society of the Spectacle. Translated by D. Nicholson-Smith. (Originally published 1967)"
+  place: "New York"
+  publisher: "Zone Books"
+murch-1995:
+  kind: book
+  authors: ["Murch, W."]
+  year: 2001
+  title: "In the Blink of an Eye: A Perspective on Film Editing. 2nd edn"
+  place: "Los Angeles"
+  publisher: "Silman-James Press"
+menkman-2011:
+  kind: book
+  authors: ["Menkman, R."]
+  year: 2011
+  title: "The Glitch Moment(um)"
+  place: "Amsterdam"
+  publisher: "Institute of Network Cultures"
+opray-2003:
+  kind: book
+  authors: ["O'Pray, M."]
+  year: 2003
+  title: "Avant-Garde Film: Forms, Themes and Passions"
+  place: "London"
+  publisher: "Wallflower Press"
+ramey-2016:
+  kind: book
+  authors: ["Ramey, K."]
+  year: 2016
+  title: "Experimental Filmmaking: Break the Machine"
+  place: "New York"
+  publisher: "Focal Press"
+russett-starr:
+  kind: book
+  authors: ["Russett, R.", "Starr, C."]
+  year: 1998
+  title: "Experimental Animation: Origins of a New Art"
+  place: "New York"
+  publisher: "Da Capo Press"
+
+# new
+farocki-2004:
+  kind: article
+  authors: ["Farocki, H."]
+  year: 2004
+  title: "Phantom images"
+  container: "Public"
+  volume: 29
+  pages: "12–22"
+kerbl-2023:
+  kind: article
+  authors: ["Kerbl, B.", "Kopanas, G.", "Leimkühler, T.", "Drettakis, G."]
+  year: 2023
+  title: "3D Gaussian splatting for real-time radiance field rendering"
+  container: "ACM Transactions on Graphics"
+  volume: 42
+  issue: 4
+chelsea-girls:
+  kind: film
+  authors: ["Warhol, A.", "Morrissey, P."]
+  year: 1966
+  title: "Chelsea Girls"
+  country: "USA"
+piece-touchee:
+  kind: film
+  authors: ["Arnold, M."]
+  year: 1989
+  title: "pièce touchée"
+  country: "Austria"
+mommy:
+  kind: film
+  authors: ["Dolan, X."]
+  year: 2014
+  title: "Mommy"
+  country: "Canada"
+napoleon:
+  kind: film
+  authors: ["Gance, A."]
+  year: 1927
+  title: "Napoléon"
+  country: "France"

@@ -4,3 +4,9 @@ dist/
 .DS_Store
 
 website/
+
+# PHP edition: never commit the PIN hash, sessions or history
+php/app/config.php
+php/app/data/*
+!php/app/data/.gitkeep
+php/app/content/.history/

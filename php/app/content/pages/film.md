@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/Page.astro
 title: The film
 description: Concept and making of OVERRAIDE, an experimental short film.
 ---
