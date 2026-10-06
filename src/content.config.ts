@@ -8,6 +8,7 @@ export const POST_TYPES = {
   "film-review": "Film Review",
   "reading-notes": "Reading Notes",
   "shoot-day": "Shoot Day",
+  journal: "Journal",
   reflection: "Reflection",
 } as const;
 
