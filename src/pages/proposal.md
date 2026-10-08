@@ -11,7 +11,7 @@ Copyright Kristians 08/10/2026
 
 Frames from OVERRAIDE (Kristians, shot 30th September – 4th October 2026)
 
-OVERRAIDE will be a 2.5-minute short about AI changing the world, and the way I personally work. For five years I have edited video for a living, deciding what other people get to see, mostly unseen myself. This summer I came across an AI tool that began to do parts of that work for me, and within weeks it had changed how I work. The film follows that discovery in one room with no dialogue: one person at a desk, and a job changing shape while they are still inside it. It is a reflection of my own experience, and I want it to feel personal rather than explained. Whether this change is good or bad is for the viewer to decide.
+OVERRAIDE will be a 2.5-minute short about AI changing the world, and the way I personally work. For five years I have edited video for a living, deciding what other people get to see, mostly unseen myself. This summer I started using an AI tool for parts of that work, and I did not realise at first how powerful it was; within weeks it had changed how I work. The film follows that discovery in one room with no dialogue: one person at a desk, and a job changing shape while they are still inside it. It is a reflection of my own experience, and I want it to feel personal rather than explained. Whether this change is good or bad is for the viewer to decide.
 
 Above are three frames from the film: a wall of screens running an automated process, an eye with a monitor reflected in it, and an editor working alone in the dark.
 
