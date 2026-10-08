@@ -21,7 +21,7 @@ OVERRAIDE is a 2.5-minute short about AI changing the world, and how it's change
 
 Above are three frames from the film. A wall of screens running an automated process, an eye with a monitor reflected in it, and an editor alone in the dark.
 
-I keep cutting back to the same eyes. That's a nod to Kuleshov, who cut the same face against different things and audiences read a different emotion each time (Prince and Hensley 1992). The eye never changes. What changes is what it's looking at, and what you bring to it. That's where I want the judgement to sit.
+I keep cutting back to the same eyes. That's a nod to Kuleshov, who cut the same face against different things so audiences read a different emotion each time. How well that original experiment really worked is debated (Prince and Hensley 1992), but later research did find the effect (Mobbs et al. 2006). The eye never changes. What changes is what it's looking at, and what you bring to it. That's where I want the judgement to sit.
 
 It's all shot in one room on a Sony FX30 with cine primes, lit by two monitors and two bike lights, nothing else. I've built tools specifically for the film that run and simulate how these AI tools work, in real time, and I film the screens while it happens. So none of it is CGI or composited screens. You will see the AI move the mouse live, cutting clips in the editing software and making progress as it goes. That's also why the moiré, banding and reflections are real and happen in camera. Most of the film is in a really wide frame, around 3:1, like the frames above. It narrows what you can see and builds intensity.
 
