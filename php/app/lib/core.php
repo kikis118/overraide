@@ -12,7 +12,7 @@ const POST_TYPES = [
     'journal' => 'Journal',
     'reflection' => 'Reflection',
 ];
-const PAGES = ['film' => 'The film', 'marking' => 'Marking guide', 'about' => 'About'];
+const PAGES = ['film' => 'The film', 'marking' => 'Marking guide', 'about' => 'About', 'proposal' => 'Proposal (one page, unlisted)'];
 
 function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 

@@ -112,8 +112,21 @@ function view_post(array $p): string
     return layout((string)$d['title'], $b, ['description' => (string)($d['summary'] ?? ''), 'edit' => '/admin/edit/post/' . $p['slug']]);
 }
 
+function view_paper(array $pg): string
+{
+    $body = md($pg['body']);
+    $bar = is_admin() ? '<p style="font:13px monospace;background:#111;color:#fff;margin:0;padding:8px 16px"><a style="color:#7fd1e8" href="' . url('/admin/edit/page/' . $pg['name']) . '">Edit this page</a> · <a style="color:#7fd1e8" href="' . url('/admin/') . '">All content</a></p>' : '';
+    return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>' . e((string)$pg['data']['title']) . '</title><style>'
+        . ':root{color-scheme:light}body{margin:0;background:#e6e6e6;color:#111;font:16px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif}'
+        . '.sheet{max-width:794px;margin:0 auto;background:#fff;padding:72px 76px 80px;min-height:100vh}.sheet h1{font-weight:400;font-size:3.1rem;line-height:1.1;margin:0 0 .2em;letter-spacing:.01em}'
+        . '.sheet p{margin:0 0 1.15em}.sheet img{display:block;width:100%;height:auto;margin:1.1em 0 .6em}.sheet h1+p{font-size:.95rem;margin-bottom:0}'
+        . '@media(max-width:640px){.sheet{padding:40px 22px 56px}.sheet h1{font-size:2.4rem}}@media print{body{background:#fff}.sheet{padding:0;max-width:none;min-height:0}@page{margin:18mm}}'
+        . '</style></head><body>' . $bar . '<main class="sheet">' . $body . '</main></body></html>';
+}
+
 function view_page(array $pg): string
 {
+    if ($pg['name'] === 'proposal') return view_paper($pg);
     $title = (string)$pg['data']['title'];
     $body = md($pg['body']);
     if (!preg_match('/<h1[\s>]/', $body)) $body = '<h1>' . e($title) . '</h1>' . $body;

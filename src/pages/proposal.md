@@ -1,0 +1,22 @@
+---
+layout: ../layouts/Paper.astro
+title: "OVERRAIDE: proposal"
+description: "One-page proposal for OVERRAIDE."
+---
+# OVERRAIDE
+
+Copyright Kristians 08/10/2026
+
+![Three frames from OVERRAIDE: a wall of screens, an eye with a monitor reflected in it, and an editor at a desk in the dark.](/media/proposal-frames.jpg)
+
+Frames from OVERRAIDE (Kristians, 2026)
+
+OVERRAIDE will be a 2.5-minute short about attention, authorship and presence, shot in a single room with no dialogue. It follows one person at a desk and the work that passes through their hands, and it asks the viewer to decide what they are watching.
+
+Above are three frames from the film: a wall of screens running a process, an eye with a monitor reflected in it, and an editor working alone in the dark.
+
+Somewhat unexpectedly, the most expressive material is the least staged: the light of a screen on a face, a reflection in an eye. This is the quality I hope to hold across the film, a room and a person lit only by what they are looking at.
+
+I plan to shoot everything in one room on a Sony FX30 with cine primes, lit only by two monitors and two bike lights. The screens will carry real content, filmed directly so that the moiré, refresh banding and reflections happen in camera, and some images will be re-filmed or re-encoded until they begin to break down. For the final movement I will reconstruct the empty room as a Gaussian splat, for camera moves no person could make.
+
+I will draw on Vertov's Man with a Movie Camera (Vertov 1929) and Farocki's Eye/Machine (Farocki 2001–03), and on the flicker films Arnulf Rainer (Kubelka 1960) and The Flicker (Conrad 1966) for the way rhythm in the cut can carry meaning.

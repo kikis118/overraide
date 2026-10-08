@@ -48,7 +48,7 @@ if (preg_match('#^/posts/([a-z0-9-]+)$#', $route, $m) && $method === 'GET') {
     if ($p && (is_admin() || empty($p['data']['draft']))) send(view_post($p));
     send(view_404(), 404);
 }
-if (preg_match('#^/(film|marking|about)$#', $route, $m) && $method === 'GET') {
+if (preg_match('#^/(film|marking|about|proposal)$#', $route, $m) && $method === 'GET') {
     $pg = find_page($m[1]);
     $pg ? send(view_page($pg)) : send(view_404(), 404);
 }
@@ -89,7 +89,7 @@ if (preg_match('#^/admin/edit/post/([a-z0-9-]+)$#', $route, $m) && $method === '
         'other' => trim(implode("\n", $other)), 'body' => $p['body'],
     ]));
 }
-if (preg_match('#^/admin/edit/page/(film|marking|about)$#', $route, $m) && $method === 'GET') {
+if (preg_match('#^/admin/edit/page/(film|marking|about|proposal)$#', $route, $m) && $method === 'GET') {
     require_admin();
     $pg = find_page($m[1]) ?? send(view_404(), 404);
     send(view_editor('page', ['key' => $m[1], 'title' => (string)$pg['data']['title'], 'description' => (string)($pg['data']['description'] ?? ''), 'body' => $pg['body']]));
