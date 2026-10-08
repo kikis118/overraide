@@ -119,7 +119,7 @@ function view_paper(array $pg): string
     return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>' . e((string)$pg['data']['title']) . '</title><style>'
         . ':root{color-scheme:light}body{margin:0;background:#e6e6e6;color:#111;font:16px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif}'
         . '.sheet{max-width:794px;margin:0 auto;background:#fff;padding:72px 76px 80px;min-height:100vh}.sheet h1{font-weight:400;font-size:3.1rem;line-height:1.1;margin:0 0 .2em;letter-spacing:.01em}'
-        . '.sheet p{margin:0 0 1.15em}.sheet img{display:block;width:100%;height:auto;margin:1.1em 0 .6em}.sheet h1+p{font-size:.95rem;margin-bottom:0}'
+        . '.sheet p{margin:0 0 1.15em}.sheet img{display:block;width:100%;height:auto;margin:1.1em 0 .6em}.sheet h1+p{font-size:.95rem;margin-bottom:0}.sheet .ai{color:#e01e1e}'
         . '@media(max-width:640px){.sheet{padding:40px 22px 56px}.sheet h1{font-size:2.4rem}}@media print{body{background:#fff}.sheet{padding:0;max-width:none;min-height:0}@page{margin:18mm}}'
         . '</style></head><body>' . $bar . '<main class="sheet">' . $body . '</main></body></html>';
 }

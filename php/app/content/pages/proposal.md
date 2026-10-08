@@ -2,7 +2,7 @@
 title: "OVERRAIDE: proposal"
 description: "One-page proposal for OVERRAIDE."
 ---
-# OVERRAIDE
+# OVERR<span class="ai">AI</span>DE
 
 Copyright Kristians 08/10/2026
 
