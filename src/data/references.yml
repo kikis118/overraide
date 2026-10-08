@@ -158,3 +158,15 @@ napoleon:
   year: 1927
   title: "Napoléon"
   country: "France"
+whitney-catalog:
+  kind: film
+  authors: ["Whitney, J."]
+  year: 1961
+  title: "Catalog"
+  country: "USA"
+snow-la-region-centrale:
+  kind: film
+  authors: ["Snow, M."]
+  year: 1971
+  title: "La Région Centrale"
+  country: "Canada"
