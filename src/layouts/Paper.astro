@@ -16,6 +16,10 @@ const { frontmatter } = Astro.props;
     .sheet h1 { font-weight: 400; font-size: 3.1rem; line-height: 1.1; margin: 0 0 .2em; letter-spacing: .01em; }
     .sheet p { margin: 0 0 1.15em; }
     .sheet img { display: block; width: 100%; height: auto; margin: 1.1em 0 .6em; }
+    .sheet figure.frames { position: relative; margin: 1.1em 0 .6em; }
+    .sheet figure.frames img { margin: 0; }
+    .sheet figure.frames p { margin: 0; }
+    .sheet .wip { position: absolute; left: 10px; top: 10px; font: 600 11px/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.62); padding: 6px 9px; border-radius: 3px; }
     .sheet h1 + p { font-size: .95rem; margin-bottom: 0; }
     .sheet a { color: inherit; }
     .sheet .ai { color: #e01e1e; }

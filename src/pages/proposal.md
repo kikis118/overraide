@@ -7,9 +7,15 @@ description: "One-page proposal for OVERRAIDE."
 
 Copyright Kristians 08/10/2026
 
+<figure class="frames">
+
 ![Three frames from OVERRAIDE: a wall of screens, an eye with a monitor reflected in it, and an editor at a desk in the dark.](/media/proposal-frames.jpg)
 
-Frames from OVERRAIDE (Kristians, shot 30th September – 4th October 2026)
+<span class="wip">Work in progress · in post-production</span>
+
+</figure>
+
+Frames from OVERRAIDE (Kristians, shot 30th September – 4th October 2026). These frames are work in progress: the film is in post-production right now.
 
 OVERRAIDE is a 2.5-minute short about AI changing the world, and how it's changed the way I work. I've edited professionally for six years, a lot of it YouTube work. I've made over 1000 videos with more than ten million views in total. My whole job is deciding what they see, and nobody sees me do it. This summer I started using an AI tool for parts of that job. I didn't realise how powerful it was until it had already changed how I work, and that took a few weeks. The film follows that, in one room with no dialogue: one person at a desk, and a job turning into something else while I'm still sitting in it. It's personal. I'm not going to tell you if it's good or bad, that's for whoever's watching.
 
