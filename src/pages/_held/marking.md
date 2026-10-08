@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Page.astro
+layout: ../../layouts/Page.astro
 title: Marking guide
 description: Where each assessment criterion is addressed on this weblog.
 ---

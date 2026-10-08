@@ -1,48 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
-import { POST_TYPES } from "../content.config";
-
-const posts = (await getCollection("posts", (p) => import.meta.env.DEV || !p.data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const fmt = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-const used = Object.entries(POST_TYPES).filter(([k]) => posts.some((p) => p.data.type === k));
 ---
 <Base>
-  <h1>overraide</h1>
-  <p class="meta">A developmental weblog: an experimental film about the invisible editor, audience negativity, and automating yourself.</p>
-
-  {used.length > 1 && (
-    <div class="filters" id="filters">
-      <button class="on" data-type="all">All</button>
-      {used.map(([k, label]) => <button data-type={k}>{label}</button>)}
-    </div>
-  )}
-
-  {posts.length === 0 && <p>No posts yet. Run <code>npm run new -- proposal "My proposal"</code>.</p>}
-  {posts.map((p) => (
-    <a class="card" href={`${base}/posts/${p.id}/`} data-type={p.data.type}>
-      <div class="meta">
-        <span class="tag">{POST_TYPES[p.data.type]}</span>
-        <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
-        {p.data.draft && <span class="unverified">draft</span>}
-      </div>
-      <h2>{p.data.title}</h2>
-      {p.data.summary && <p>{p.data.summary}</p>}
-    </a>
-  ))}
-
-  <script>
-    const bar = document.getElementById("filters");
-    bar?.addEventListener("click", (e) => {
-      const btn = (e.target as HTMLElement).closest("button");
-      if (!btn) return;
-      bar.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b === btn));
-      const t = btn.dataset.type;
-      document.querySelectorAll<HTMLElement>(".card").forEach((c) => {
-        c.hidden = t !== "all" && c.dataset.type !== t;
-      });
-    });
-  </script>
+  <h1>OVERRAIDE</h1>
+  <p class="meta">An experimental short film. Development log, work in progress.</p>
+  <p><a href={`${base}/proposal/`}>Proposal</a></p>
 </Base>

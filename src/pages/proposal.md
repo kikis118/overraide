@@ -9,7 +9,7 @@ Copyright Kristians 08/10/2026
 
 ![Three frames from OVERRAIDE: a wall of screens, an eye with a monitor reflected in it, and an editor at a desk in the dark.](/media/proposal-frames.jpg)
 
-Frames from OVERRAIDE (Kristians, 2026)
+Frames from OVERRAIDE (Kristians, shot 30th September – 4th October 2026)
 
 OVERRAIDE will be a 2.5-minute short about my own work and a tool I came across by accident. For five years I have edited video for a living, deciding what other people get to see, mostly unseen myself. This summer I found a tool that began to do parts of that work for me, and within weeks it had changed how I work. The film follows that discovery in one room with no dialogue: one person at a desk, and a job changing shape while they are still inside it. It is a reflection of my own experience, and I hope it reads as personal rather than explained.
 

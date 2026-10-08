@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../layouts/Base.astro";
-import { harvard, sortKey } from "../lib/harvard";
+import Base from "../../layouts/Base.astro";
+import { harvard, sortKey } from "../../lib/harvard";
 
 const refs = (await getCollection("references")).sort((a, b) => sortKey(a.data).localeCompare(sortKey(b.data)));
 const groups = [
