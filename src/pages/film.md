@@ -15,8 +15,7 @@ An experimental short film, about two and a half minutes, no dialogue, shot in o
 
 - **Camera:** Sony FX30, S-Log3, 4K 25p, 100fps for slow motion. Samyang 24/45/75mm T1.9 cine primes and a Sony 50mm f/2.5 G.
 - **Light:** two bike lights, two monitors and the display inside the PC. Nothing else.
-- **In-camera screens:** real content on the monitors, re-filmed, so light, reflections and moiré are real.
-- **Generation loss and video feedback:** footage re-encoded and re-filmed until it dissolves; the camera pointed at its own output.
+- **In-camera screens:** real content on the monitors, filmed directly, so light, reflections and moiré are real.
 - **Automation as material:** expression-driven analytics counters, a script that fills a folder with clips, real keystrokes logged and replayed with nobody at the desk.
 - **Gaussian splatting:** the empty room reconstructed in 3D from phone footage, for camera moves no person could make.
 - **Aspect ratio:** animated letterbox, from 2.39:1 to vertical to black.

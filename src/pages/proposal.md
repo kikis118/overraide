@@ -17,6 +17,6 @@ Above are three frames from the film: a wall of screens running a process, an ey
 
 Somewhat unexpectedly, the most expressive material is the least staged: the light of a screen on a face, a reflection in an eye. This is the quality I hope to hold across the film, a room and a person lit only by what they are looking at.
 
-I plan to shoot everything in one room on a Sony FX30 with cine primes, lit only by two monitors and two bike lights. The screens will carry real content, filmed directly so that the moiré, refresh banding and reflections happen in camera, and some images will be re-filmed or re-encoded until they begin to break down. For the final movement I will reconstruct the empty room as a Gaussian splat, for camera moves no person could make.
+I plan to shoot everything in one room on a Sony FX30 with cine primes, lit only by two monitors and two bike lights. The screens will carry real content, filmed directly so that the moiré, refresh banding and reflections happen in camera. The experimental centre of the film is 3D Gaussian splatting: the empty room reconstructed as a navigable 3D scene, for camera moves no person could make. I want to work with modern, state-of-the-art tools that are rarely used in cinema, and to show what they can do as a filmmaking medium.
 
 I will draw on Vertov's Man with a Movie Camera (Vertov 1929) and Farocki's Eye/Machine (Farocki 2001–03), and on the flicker films Arnulf Rainer (Kubelka 1960) and The Flicker (Conrad 1966) for the way rhythm in the cut can carry meaning.
