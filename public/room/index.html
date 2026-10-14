@@ -9,6 +9,7 @@
   <meta property="og:title" content="OVERRAIDE">
   <meta property="og:description" content="An experimental short film, shot in one room.">
   <meta name="theme-color" content="#0b0d10">
+  <meta property="og:image" content="hero.jpg">
   <link rel="preload" href="fonts/archivo.woff" as="font" type="font/woff" crossorigin>
   <style>
     @font-face { font-family: "Archivo"; src: url("fonts/archivo.woff") format("woff"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
@@ -23,13 +24,11 @@
     .word { font-weight: 700; font-stretch: 85%; letter-spacing: .18em; text-decoration: none; font-size: 15px; }
     .word b { color: var(--red); font-weight: 700; }
     header .tag { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
-    .hero { position: relative; min-height: 92vh; display: grid; align-items: end; overflow: hidden; }
-    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; border-radius: 0; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11,13,16,.55), rgba(11,13,16,0) 35%, rgba(11,13,16,.92) 92%); }
-    .hero .wrap { position: relative; z-index: 2; padding-bottom: 64px; width: 100%; }
+    .hero { position: relative; padding: 110px 0 0; }
+    .hero .wrap { position: relative; z-index: 2; }
     h1 { font-weight: 800; font-stretch: 70%; font-size: clamp(54px, 13vw, 168px); line-height: .9; letter-spacing: .02em; margin: 0 0 18px; }
     h1 .ai { color: var(--red); }
-    .lede { max-width: 560px; font-size: clamp(18px, 2.2vw, 22px); color: #c9ced4; margin: 0; }
+    .lede { max-width: 560px; font-size: clamp(18px, 2.2vw, 22px); color: #c9ced4; margin: 0 0 34px; }
     .status { margin-top: 18px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); display: flex; align-items: center; gap: 10px; }
     .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px var(--red); display: inline-block; }
     section { padding: 96px 0 0; }
@@ -66,18 +65,14 @@
   <header><div class="wrap"><a class="word" href="#">OVERR<b>AI</b>DE</a><span class="tag">Short film</span></div></header>
 
   <div class="hero">
-    <img src="hero.jpg" alt="Dust drifting through monitor light">
     <div class="wrap">
       <h1>OVERR<span class="ai">AI</span>DE</h1>
       <p class="lede">An experimental short film about AI changing the world, and the way I work. Shot in one room.</p>
+      <div class="player"><iframe src="https://player.vimeo.com/video/1235925352?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="OVERRAIDE"></iframe></div>
     </div>
   </div>
 
   <main class="wrap">
-    <section id="film">
-      <div class="player"><iframe src="https://player.vimeo.com/video/1235925352?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="OVERRAIDE"></iframe></div>
-    </section>
-
     <section id="room">
       <h2>The room</h2>
       <p class="sub">The Gaussian splat version I ended up using in the film. Drag to look around, scroll to move closer.</p>
