@@ -75,24 +75,13 @@
   <main class="wrap">
     <section id="room">
       <h2>The room</h2>
-      <p class="sub">The whole film is shot in one room. This is that room, reconstructed in 3D as a Gaussian splat. Drag to look around, scroll to move closer.</p>
+      <p class="sub">The room, as the camera finds it. Drag to look around, scroll to move closer.</p>
       <div class="viewer" id="viewer">
         <div class="veil" id="veil"><div><button class="enter" id="enter">Enter the room</button><small>48 MB · best on desktop</small></div></div>
       </div>
-      <div class="controls"><button id="reset">Reset view</button><button id="flip">Flip</button><span id="msg"></span></div>
+      <div class="controls"><button id="reset">Reset view</button><span id="msg"></span></div>
     </section>
 
-    <section id="making">
-      <h2>How it's made</h2>
-      <p class="sub">Behind the scenes, in short.</p>
-      <div class="grid">
-        <div><h3>One room, one person</h3><p>Everything is shot in a single room by one person, on a Sony FX30 with cine primes.</p></div>
-        <div><h3>Light</h3><p>Two monitors and two bike lights. Nothing else.</p></div>
-        <div><h3>Real screens</h3><p>No composited screens. Tools built for the film run in real time, and the screens are filmed as it happens.</p></div>
-        <div><h3>A wide frame</h3><p>Most of the film sits in a frame around 3:1, to narrow the view and build intensity.</p></div>
-        <div><h3>New tools</h3><p>Gaussian splatting lets the camera move through the room in ways nobody could shoot.</p></div>
-      </div>
-    </section>
 
     <div class="support">
       <h2>Support the film</h2>
@@ -118,7 +107,6 @@
       else { $("enter").disabled = false; $("enter").textContent = "Try again"; }
     });
     $("reset").addEventListener("click", () => viewer && viewer.reset());
-    $("flip").addEventListener("click", () => viewer && viewer.flip());
   </script>
 </body>
 </html>
