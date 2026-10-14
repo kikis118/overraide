@@ -17,3 +17,5 @@ php/app/content/.history/
 *.ply
 *.blend
 *.blend1
+frame_*.png
+reference_proposal.png
