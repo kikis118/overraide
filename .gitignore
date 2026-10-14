@@ -10,3 +10,10 @@ php/app/config.php
 php/app/data/*
 !php/app/data/.gitkeep
 php/app/content/.history/
+
+# large local files: never commit
+*.psht
+*.mp4
+*.ply
+*.blend
+*.blend1
