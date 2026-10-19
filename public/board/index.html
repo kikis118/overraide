@@ -132,8 +132,7 @@
 <nav class="tabs" aria-label="Sections">
   <div class="wrap">
     <a href="#direct" class="on">Direct references</a>
-    <a href="#film">Film &amp; video</a>
-    <a href="#hubert">Ian Hubert</a>
+    <a href="#film">Style references</a>
     <a href="#palette">Palette</a>
   </div>
 </nav>
@@ -148,15 +147,8 @@
 
   <section id="film">
     <div class="wrap">
-      <h2>Film &amp; video references</h2>
+      <h2>Style references</h2>
       <div class="collage" id="filmGrid"></div>
-    </div>
-  </section>
-
-  <section id="hubert">
-    <div class="wrap">
-      <h2>Ian Hubert</h2>
-      <div class="collage" id="hubertGrid"></div>
     </div>
   </section>
 
@@ -218,11 +210,9 @@ const FILM = [
   { yt: '4HdnfPHCIGQ', title: 'Portal trick shots: VFX breakdown', by: 'Corridor Crew', note: 'How portal shots are done.' },
   { yt: 'pKWB-MVJ4sQ', size: 'w', title: 'Zygote', by: 'Oats Studios, 2017', note: 'Creature kept in the dark.' },
   { slug: 'wall-e', size: 'w', film: 'WALL·E', by: '2008', link: FG + '/2021/02/22/wall-e/', tint: ['#1b1206', '#e0a55a'], note: 'Nebula colours for the void.' },
-  { slug: 'baby-driver', film: 'Baby Driver', by: '2017 · DoP Bill Pope', link: FG + '/2019/03/05/baby-driver/', tint: ['#160a0a', '#e05a4a'], note: 'Cutting to the music.' },
-  { slug: 'monsters', film: 'Monsters', by: 'Gareth Edwards, 2010', link: 'https://www.youtube.com/results?search_query=Monsters+2010+Gareth+Edwards+trailer', linkLabel: 'Trailer on YouTube ↗', tint: ['#0c1210', '#8aa38a'], note: 'Low-budget VFX by one person.' },
 ];
 
-// ---- Ian Hubert ----
+// ---- Ian Hubert (shown in the same grid as the films) ----
 const HUBERT = [
   { yt: 'qG31WSioSxk', size: 'w', title: 'Dynamo Dream: Teaser', by: 'Ian Hubert', note: 'City built alone in Blender.' },
   { yt: 'FFJ_THGj72U', size: 'w', title: 'VFX Breakdown: Dynamo Dream Teaser', by: 'Ian Hubert', note: 'How the teaser was made.' },
@@ -248,7 +238,7 @@ const PALETTE = [
 // ---------- rendering ----------
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const items = { direct: [], film: [], hubert: [] };
+const items = { direct: [], film: [] };
 
 function tryImg(src) { return new Promise(res => { const im = new Image(); im.onload = () => res(src); im.onerror = () => res(null); im.src = src; }); }
 function slotTile(big, small, tint) {
@@ -348,7 +338,7 @@ const tabs = [...document.querySelectorAll('nav.tabs a')];
 const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) tabs.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
 document.querySelectorAll('main section').forEach(s => io.observe(s));
 
-buildDirect(); buildRefs(FILM, 'film', $('#filmGrid')); buildRefs(HUBERT, 'hubert', $('#hubertGrid')); buildPalette();
+buildDirect(); buildRefs(FILM.concat(HUBERT), 'film', $('#filmGrid')); buildPalette();
 </script>
 </body>
 </html>
