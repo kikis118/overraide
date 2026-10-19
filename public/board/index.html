@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Concept Board</title>
+  <meta name="description" content="Concept board for a ~90-second hybrid live-action/CG VFX short: direct shot references, film references and the colour palette.">
+  <meta name="theme-color" content="#0a0c0f">
+  <meta property="og:title" content="Concept Board">
+  <meta property="og:image" content="img/desk-wide.jpg">
+  <link rel="preload" href="../room/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
+  <style>
+    @font-face { font-family: "Archivo"; src: url("../room/fonts/archivo.woff") format("woff"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+    :root {
+      --bg: #0a0c0f; --panel: #10141a; --line: #1d232b; --ink: #e8eaed; --dim: #8b929b;
+      --violet: #8b6cf0; --glow: #c9b8ff; --steel: #83a6c5;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; scroll-padding-top: 64px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 "Archivo", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: var(--glow); text-underline-offset: 3px; }
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 700px) { .wrap { padding: 0 28px; } }
+
+    /* hero */
+    .hero { position: relative; min-height: 78vh; display: flex; align-items: flex-end; overflow: hidden; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .62; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,12,15,.35), rgba(10,12,15,0) 40%, var(--bg) 98%), radial-gradient(ellipse at 70% 30%, rgba(139,108,240,.18), transparent 60%); }
+    .hero .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: 40px; }
+    .kicker { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); margin: 0 0 10px; }
+    h1 { font-weight: 800; font-stretch: 70%; font-size: clamp(52px, 12vw, 150px); line-height: .88; margin: 0 0 18px; letter-spacing: .01em; }
+    h1 span { color: var(--glow); text-shadow: 0 0 40px rgba(139,108,240,.55); }
+    .lede { max-width: 620px; color: #c6cbd2; font-size: clamp(16px, 2vw, 19px); margin: 0; }
+
+    /* sticky nav */
+    nav.tabs { position: sticky; top: 0; z-index: 20; background: rgba(10,12,15,.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    nav.tabs .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; padding-bottom: 10px; scrollbar-width: none; }
+    nav.tabs a { flex: none; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; color: var(--dim); padding: 7px 14px; border: 1px solid var(--line); border-radius: 99px; }
+    nav.tabs a.on, nav.tabs a:hover { color: var(--ink); border-color: var(--violet); }
+
+    section { padding: 64px 0 8px; }
+    h2 { font-weight: 750; font-stretch: 78%; font-size: clamp(30px, 5vw, 50px); line-height: 1.02; margin: 0 0 10px; }
+    .sub { color: var(--dim); max-width: 640px; margin: 0 0 22px; }
+    .sub b { color: var(--ink); font-weight: 600; }
+
+    /* collage */
+    .collage { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 26vw; grid-auto-flow: dense; gap: 6px; }
+    @media (min-width: 700px) { .collage { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 150px; gap: 8px; } }
+    @media (min-width: 1100px) { .collage { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 140px; } }
+    .tile { position: relative; overflow: hidden; border-radius: 6px; background: var(--panel); border: 1px solid var(--line); cursor: zoom-in; grid-column: span 1; grid-row: span 1; padding: 0; color: inherit; font: inherit; text-align: left; }
+    .tile.w { grid-column: span 2; }
+    .tile.t { grid-row: span 2; }
+    @media (min-width: 700px) { .tile.hero2 { grid-column: span 2; grid-row: span 2; } }
+    @media (min-width: 1100px) { .tile.hero2 { grid-column: span 3; grid-row: span 3; } .tile.w { grid-column: span 2; } }
+    .tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .4s; filter: saturate(.95); }
+    .tile:hover img, .tile:focus-visible img { transform: scale(1.045); filter: saturate(1.1) brightness(1.08); }
+    .tile:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+    .tile .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 10px 9px; background: linear-gradient(transparent, rgba(5,6,8,.88)); font-size: 12px; line-height: 1.3; }
+    .tile .cap b { display: block; font-size: 13px; font-weight: 650; }
+    .tile .cap i { font-style: normal; color: var(--dim); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .tile .num { position: absolute; top: 8px; left: 9px; font-size: 11px; letter-spacing: .1em; color: rgba(232,234,237,.75); }
+    /* empty slot (PoE / film still not added yet) */
+    .tile.slot { cursor: pointer; border-style: dashed; border-color: #2c3440; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; }
+    .tile.slot .ghost { position: absolute; inset: 0; opacity: .9; }
+    .tile.slot .big { position: relative; font-weight: 800; font-stretch: 70%; font-size: clamp(20px, 3.2vw, 34px); line-height: .95; margin-bottom: 6px; }
+    .tile.slot .small { position: relative; font-size: 12px; color: var(--dim); line-height: 1.35; }
+    .tile.slot .small em { font-style: normal; color: var(--steel); }
+
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+    .chips button { font: inherit; font-size: 13px; color: var(--dim); background: none; border: 1px solid var(--line); padding: 5px 12px; border-radius: 99px; cursor: pointer; }
+    .chips button.on, .chips button:hover { color: var(--ink); border-color: var(--violet); background: rgba(139,108,240,.1); }
+    .tile.hide { display: none; }
+
+    /* palette */
+    .palette { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    @media (min-width: 700px) { .palette { grid-template-columns: repeat(5, 1fr); } }
+    @media (min-width: 1100px) { .palette { grid-template-columns: repeat(5, 1fr); } }
+    .sw { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); cursor: copy; padding: 0; font: inherit; color: inherit; text-align: left; }
+    .sw .chip { height: 96px; transition: height .3s; }
+    .sw:hover .chip { height: 112px; }
+    .sw .meta { padding: 9px 10px 11px; font-size: 12px; line-height: 1.35; }
+    .sw .meta b { display: block; font-size: 13px; font-weight: 650; }
+    .sw .meta code { font: 12px ui-monospace, Consolas, monospace; color: var(--dim); }
+    .sw .meta .tag { display: inline-block; margin-top: 5px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--glow); }
+    .ramp { height: 18px; border-radius: 99px; margin: 16px 0 6px; background: linear-gradient(90deg, #0a0c0f, #1d2b39 14%, #465b6d 26%, #5c617a 38%, #1b1838 52%, #4b4890 64%, #6b4bd6 76%, #7a2d55 83%, #a79de6 100%); border: 1px solid var(--line); }
+    .ramp-l { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+
+    /* style guide */
+    .rules { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    @media (min-width: 700px) { .rules { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .rules { grid-template-columns: repeat(3, 1fr); } }
+    .rules div { background: var(--bg); padding: 20px 20px 22px; }
+    .rules h3 { margin: 0 0 6px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--glow); font-weight: 600; }
+    .rules p { margin: 0; color: #c0c5cc; font-size: 15px; }
+
+    footer { border-top: 1px solid var(--line); margin-top: 72px; padding: 22px 0 40px; color: var(--dim); font-size: 12px; line-height: 1.6; }
+
+    /* lightbox */
+    .lb { position: fixed; inset: 0; z-index: 50; background: rgba(4,5,7,.985); display: none; flex-direction: column; }
+    .lb.open { display: flex; }
+    .lb .stage { flex: 1; min-height: 0; display: grid; place-items: center; padding: 56px 12px 8px; touch-action: pan-y; }
+    .lb .stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 20px 80px rgba(0,0,0,.6); }
+    .lb .stage .noimg { max-width: 560px; text-align: center; padding: 24px; }
+    .lb .stage .noimg .big { font-weight: 800; font-stretch: 70%; font-size: clamp(40px, 9vw, 84px); line-height: .9; margin-bottom: 14px; }
+    .lb .info { padding: 14px 16px calc(18px + env(safe-area-inset-bottom)); max-width: 860px; margin: 0 auto; width: 100%; }
+    .lb .info i { font-style: normal; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--glow); }
+    .lb .info h4 { margin: 2px 0 4px; font-size: 19px; font-weight: 700; }
+    .lb .info p { margin: 0 0 6px; color: #c0c5cc; font-size: 15px; }
+    .lb .info .links { font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .lb button.x, .lb button.nav { position: absolute; background: rgba(255,255,255,.06); color: var(--ink); border: 1px solid #2a313b; border-radius: 99px; width: 44px; height: 44px; font: 20px/1 system-ui, sans-serif; cursor: pointer; }
+    .lb button.x { top: 10px; right: 12px; }
+    .lb button.nav { top: 50%; transform: translateY(-50%); }
+    .lb button.prev { left: 12px; } .lb button.next { right: 12px; }
+    .lb .count { position: absolute; top: 22px; left: 16px; font-size: 12px; letter-spacing: .12em; color: var(--dim); }
+    @media (max-width: 699px) { .lb button.nav { display: none; } }
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: #1a1f27; border: 1px solid #2a313b; color: var(--ink); padding: 8px 16px; border-radius: 99px; font-size: 13px; opacity: 0; transition: .25s; z-index: 60; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="img/desk-wide.jpg" alt="">
+  <div class="wrap">
+    <p class="kicker">Final project · ~90s hybrid live-action / CG · concept board</p>
+    <h1>The room,<br>the <span>void</span>.</h1>
+    <p class="lede">A hooded figure at a desk, a portal, an endless void and a colossal being of light. This board splits what each shot should <b>look like</b> from where the <b>style</b> comes from.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap">
+    <a href="#direct" class="on">Direct references</a>
+    <a href="#film">Film references</a>
+    <a href="#palette">Palette</a>
+    <a href="#guide">Style guide</a>
+  </div>
+</nav>
+
+<main>
+  <section id="direct">
+    <div class="wrap">
+      <h2>Direct references</h2>
+      <p class="sub"><b>This is the shot.</b> The opening shots match these overraide frames almost 1:1 in lighting and composition. The screen content changes and some angles shift. Path of Exile frames set the composition and scale for the light being. Tap any frame to open it.</p>
+      <div class="collage" id="directGrid"></div>
+    </div>
+  </section>
+
+  <section id="film">
+    <div class="wrap">
+      <h2>Film references</h2>
+      <p class="sub"><b>Colour, style and ideas</b>, not compositions to copy. Each card links to that film's full-size frames on FILMGRAB to download or screenshot. A saved frame appears here automatically once it is dropped into <code>img/film/</code> under the name shown.</p>
+      <div class="chips" id="chips"></div>
+      <div class="collage" id="filmGrid"></div>
+    </div>
+  </section>
+
+  <section id="palette">
+    <div class="wrap">
+      <h2>Palette</h2>
+      <p class="sub"><b>Top row: the room</b>, sampled from the overraide frames. <b>Bottom row: the void and the being</b>, taken from the Shaper. The film travels from cool steel into purple. Tap a swatch to copy its hex.</p>
+      <div class="palette" id="pal"></div>
+      <div class="ramp" aria-hidden="true"></div>
+      <div class="ramp-l"><span>Room</span><span>Screen light</span><span>Void</span><span>Portal</span><span>Light being</span></div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap">
+      <h2>Style guide</h2>
+      <p class="sub">The rules each shot is checked against.</p>
+      <div class="rules">
+        <div><h3>One source</h3><p>In the room the monitor is the key. Everything it doesn't reach falls to black. No fill that the room can't explain.</p></div>
+        <div><h3>Into purple</h3><p>The room is cool steel with lilac-grey skin (#5C617A), already leaning towards violet. Through the portal everything turns purple, like the Shaper: indigo shadows, violet cloth, lavender light.</p></div>
+        <div><h3>Keep the dark dark</h3><p>Under-lit CG reads as real and over-lit CG reads as synthetic. The void stays deep indigo, not flat black, with stars in the cloth. One magenta note at most.</p></div>
+        <div><h3>Scale through haze</h3><p>Small silhouette, vast soft-edged form, atmosphere between them. The being is never fully revealed.</p></div>
+        <div><h3>Hide the handover</h3><p>Relight the double to the plate. Match blur, grain and lens distortion. Cut or wipe on movement or an occluder.</p></div>
+        <div><h3>Filmed, not rendered</h3><p>Lens flaws, grain and slight distortion on every CG frame, so the void feels shot on the same camera as the room.</p></div>
+        <div><h3>Locked-off plates</h3><p>Room plates are locked off or simply tracked, which keeps the matchmove and the Gaussian-splat room cheap and stable.</p></div>
+        <div><h3>No generated images</h3><p>Nothing on screen is AI-generated. AI is used only inside the pipeline (roto, denoise) and every use is logged.</p></div>
+        <div><h3>Cut to the sound</h3><p>Cuts into and out of the portal land on the beat. The edit drives the rush.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Direct references: frames from <i>overraide</i> (2026), my own work. Path of Exile frames © Grinding Gear Games; The Shaper key art by Viacheslav Kotenok. Film frames link to FILMGRAB and belong to their rights holders. They are shown for study and reference only.
+    No generative AI imagery appears on this page or in the film.
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Reference viewer">
+  <span class="count" id="lbCount"></span>
+  <button class="x" id="lbX" aria-label="Close">×</button>
+  <button class="nav prev" id="lbPrev" aria-label="Previous">‹</button>
+  <button class="nav next" id="lbNext" aria-label="Next">›</button>
+  <div class="stage" id="lbStage"></div>
+  <div class="info" id="lbInfo"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ---- Direct references: overraide frames (own work) + Path of Exile slots ----
+// To add a PoE frame: save it as img/poe/poe-1.jpg (poe-2, poe-3 …). The slot fills itself.
+const DIRECT = [
+  { id: 'desk-wide', size: 'hero2', label: 'Shot 1 · opening', title: 'The desk, wide', note: 'Monitor as the only key, figure in silhouette, room falling to black. The final opening keeps this composition and light; the figure wears the hood and the screens show different content.' },
+  { id: 'eye', size: 'w', label: 'Shot 2 · close-up', title: 'Screen in the eye', note: 'Cool lilac-grey skin and the screen reflected in the iris. Same light in the final film; the reflection becomes the first flicker of the portal.' },
+  { id: 'hand', label: 'Insert', title: 'Hands in the dark', note: 'One cold source, everything else lost. Insert cuts keep this exposure.' },
+  { id: 'terminals', size: 'w', label: 'Insert · screens', title: 'Screens, shallow focus', note: 'Shallow focus on screen texture. Composition stays; screen content changes for the final film.' },
+  { id: 'pc', label: 'Insert', title: 'The machine', note: 'Blue cast with a single warm-red accent: the only warm note allowed in the room.' },
+  { id: 'room-wide', size: 't', label: 'Room geography', title: 'The room, lit', note: 'Room layout for the matchmove and for the Gaussian-splat capture.' },
+  { id: 'splat-screens', size: 'w', label: 'Transition', title: 'The room as a splat', note: 'Gaussian-splat render of the room. This is where the room starts to come apart into the void.' },
+  { id: 'splat-room', size: 'w', label: 'Transition', title: 'Splat edges', note: 'Splat artefacts at the edges of the capture: the texture of the room-to-void transition.' },
+  { poe: 'poe-1', size: 't', label: 'Path of Exile · key art', title: 'The Shaper', credit: 'Art by Viacheslav Kotenok', note: 'The target for the being and the void: a hooded figure whose robe is the night sky, indigo shadows, violet cloth, lavender light and one magenta note. This is where the purple comes from.' },
+  { poe: 'poe-2', label: 'Path of Exile · in game', title: 'The Shaper, in game (PoE 1)', credit: 'Path of Exile, Grinding Gear Games', note: 'The in-game look I am going for: a purple aura bleeding off a dark robe, low and murky ground light.' },
+  { poe: 'poe-3', label: 'Path of Exile', title: 'Arena / scale', note: 'Optional: a wide shot of the arena for scale (tiny player, huge form). Add as img/poe/poe-3.jpg.' },
+];
+
+// ---- Film references: style, colour, ideas. Links verified on film-grab.com, Oct 2026 ----
+const FG = 'https://film-grab.com';
+const FILM = [
+  { slug: 'doctor-strange', board: 'Portal', film: 'Doctor Strange', year: 2016, dop: 'Ben Davis', link: FG + '/2019/03/18/doctor-strange/', size: 'w', tint: ['#2a1606', '#ff9a3c'], note: 'Spark-ring portals: edge detail, how the portal reveals the other side. Slower and quieter in my film, more tear than spell.' },
+  { slug: '2001', board: 'Portal', film: '2001: A Space Odyssey', year: 1968, dop: 'Geoffrey Unsworth', link: FG + '/2010/07/06/2001-a-space-odyssey/', tint: ['#12052a', '#ff4fd8'], note: 'Star Gate sequence: speed, colour shifts, how long the rush is held.' },
+  { slug: 'under-the-skin', board: 'Void', film: 'Under the Skin', year: 2013, dop: 'Daniel Landin', link: FG + '/2014/07/14/under-the-skin/', size: 't', tint: ['#000000', '#3a3a44'], note: 'A figure walking through a space with no edges: black floor, reflection or none, the body against pure black.' },
+  { slug: 'zodiac', board: 'Void', film: 'Zodiac', year: 2007, dop: 'Harris Savides', link: FG + '/2010/06/23/zodiac/', tint: ['#05080a', '#4a6a6a'], note: 'Dark, under-lit backgrounds. Why under-lit CG looks less synthetic (Prince, 2012).' },
+  { slug: 'dune', board: 'Light being', film: 'Dune', year: 2021, dop: 'Greig Fraser', link: FG + '/2022/06/24/dune-2021/', size: 'w', tint: ['#1a1410', '#c9a27a'], note: 'Tiny figures against colossal forms; haze, scale cues, silhouette framing.' },
+  { slug: 'arrival', board: 'Light being', film: 'Arrival', year: 2016, dop: 'Bradford Young', link: FG + '/2019/06/28/arrival/', size: 't', tint: ['#0d1013', '#9aa7ad'], note: 'The shell in fog: soft edges, low contrast, people dwarfed by a form that is never fully seen.' },
+  { slug: 'king-kong', board: 'Handover', film: 'King Kong', year: 2005, dop: 'Andrew Lesnie', link: FG + '/2015/03/04/king-kong-2/', tint: ['#0e1310', '#7d8f6a'], note: 'Bluescreen actor relit to match the CG world (Prince, 2012, p. 64). Light direction, skin and cloth match.' },
+  { slug: 'children-of-men', board: 'Handover', film: 'Children of Men', year: 2006, dop: 'Emmanuel Lubezki', link: FG + '/2014/02/27/children-of-men/', size: 'w', tint: ['#14161a', '#7c858f'], note: 'Long takes stitched on hidden joins (Prince, 2012, p. 93). Where the eye goes at the moment of the cut.' },
+  { slug: 'jurassic-park', board: 'Handover', film: 'Jurassic Park', year: 1993, dop: 'Dean Cundey', link: FG + '/2015/05/11/jurassic-park/', tint: ['#0a120c', '#6f8a5a'], note: 'Switching between practical and CG within a scene; camera moves that push one version out and bring the other in.' },
+  { slug: 'wall-e', board: 'Finish', film: 'WALL·E', year: 2008, dop: null, link: FG + '/2021/02/22/wall-e/', tint: ['#1b1206', '#e0a55a'], note: 'Lens flaws added to CG so it feels filmed: anamorphic flares, distortion, focus breathing.' },
+  { slug: 'baby-driver', board: 'Rhythm', film: 'Baby Driver', year: 2017, dop: 'Bill Pope', link: FG + '/2019/03/05/baby-driver/', tint: ['#160a0a', '#e05a4a'], note: 'Cuts locked to sound. Timing model for the cuts into and out of the portal.' },
+  { slug: 'monsters', board: 'Solo method', film: 'Monsters', year: 2010, dop: 'Gareth Edwards', link: 'https://www.youtube.com/results?search_query=Monsters+2010+Gareth+Edwards+trailer', linkLabel: 'Trailer (not on FILMGRAB)', tint: ['#0c1210', '#8aa38a'], note: 'Creatures half-seen at night, built by one person on off-the-shelf software. Which cheats carry the most screen value.' },
+  { slug: 'ian-hubert', board: 'Solo method', film: 'Ian Hubert', year: null, dop: null, link: 'https://www.youtube.com/results?search_query=Ian+Hubert+Dynamo+Dream', linkLabel: 'Films and tutorials on YouTube', tint: ['#0b0f16', '#7fb8ff'], note: 'Whole worlds made alone in Blender: greenscreen, photo textures and cheap tricks made convincing.' },
+];
+
+const PALETTE = [
+  { name: 'Room black', hex: '#0A0C0F', from: 'Desk wide' },
+  { name: 'Monitor shadow', hex: '#1D2B39', from: 'Desk wide' },
+  { name: 'Screen glow', hex: '#465B6D', from: 'Desk wide' },
+  { name: 'Lit skin', hex: '#5C617A', from: 'Eye close-up' },
+  { name: 'Steel highlight', hex: '#83A6C5', from: 'The machine' },
+  { name: 'Cosmic indigo', hex: '#1B1838', tag: 'void · Shaper' },
+  { name: 'Robe violet', hex: '#4B4890', tag: 'void · Shaper' },
+  { name: 'Portal violet', hex: '#6B4BD6', tag: 'portal' },
+  { name: 'Lavender light', hex: '#A79DE6', tag: 'light being' },
+  { name: 'Nebula magenta', hex: '#7A2D55', tag: 'one accent only' },
+];
+
+// ---------- rendering ----------
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const items = { direct: [], film: [] };
+
+function tryImg(srcs) { // resolves to the first source that loads, or null
+  return new Promise(res => {
+    const go = i => { if (i >= srcs.length) return res(null); const im = new Image(); im.onload = () => res(srcs[i]); im.onerror = () => go(i + 1); im.src = srcs[i]; };
+    go(0);
+  });
+}
+
+function slotTile(big, small, tint) {
+  const g = tint ? `background: radial-gradient(ellipse at 70% 20%, ${tint[1]}33, transparent 60%), linear-gradient(160deg, ${tint[0]}, #0a0c0f);` : 'background: radial-gradient(ellipse at 70% 20%, rgba(139,108,240,.18), transparent 60%);';
+  return `<span class="ghost" style="${g}"></span><span class="big">${esc(big)}</span><span class="small">${small}</span>`;
+}
+
+function buildDirect() {
+  const grid = $('#directGrid');
+  DIRECT.forEach((d, i) => {
+    const b = document.createElement('button');
+    b.className = 'tile ' + (d.size || '');
+    const n = String(i + 1).padStart(2, '0');
+    const entry = { label: d.label, title: d.title, note: d.note, img: null, links: [], credit: d.credit };
+    if (d.id) {
+      entry.img = `img/${d.id}.jpg`;
+      b.innerHTML = `<img src="img/${d.id}-sm.jpg" alt="${esc(d.title)}" loading="lazy"><span class="num">${n}</span><span class="cap"><i>${esc(d.label)}</i><b>${esc(d.title)}</b></span>`;
+    } else {
+      b.classList.add('slot');
+      b.innerHTML = slotTile(d.title, `<em>${esc(d.label)}</em> · add <code>img/poe/${d.poe}.jpg</code>`, ['#140a1e', '#8b6cf0']);
+      tryImg([`img/poe/${d.poe}.jpg`]).then(src => {
+        if (!src) return;
+        entry.img = src; b.classList.remove('slot');
+        b.innerHTML = `<img src="${src}" alt="${esc(d.title)}" loading="lazy"><span class="num">${n}</span><span class="cap"><i>${esc(d.label)}</i><b>${esc(d.title)}</b></span>`;
+      });
+    }
+    items.direct.push(entry);
+    b.addEventListener('click', () => openLb('direct', i));
+    grid.appendChild(b);
+  });
+}
+
+function buildFilm() {
+  const grid = $('#filmGrid');
+  FILM.forEach((f, i) => {
+    const b = document.createElement('button');
+    b.className = 'tile slot ' + (f.size || '');
+    b.dataset.board = f.board;
+    const credit = [f.year, f.dop && 'DoP ' + f.dop].filter(Boolean).join(' · ');
+    const entry = { label: f.board, title: f.film + (f.year ? ` (${f.year})` : ''), note: f.note, img: null, credit,
+      links: [{ href: f.link, text: f.linkLabel || 'Open full-size frames on FILMGRAB ↗' }], file: `img/film/${f.slug}.jpg`, tint: f.tint };
+    b.innerHTML = slotTile(f.film, `<em>${esc(f.board)}</em>${credit ? ' · ' + esc(credit) : ''}`, f.tint);
+    tryImg([`img/film/${f.slug}.jpg`]).then(src => {
+      if (!src) return;
+      entry.img = src; b.classList.remove('slot');
+      b.innerHTML = `<img src="${src}" alt="${esc(f.film)}" loading="lazy"><span class="cap"><i>${esc(f.board)}</i><b>${esc(f.film)}</b></span>`;
+    });
+    items.film.push(entry);
+    b.addEventListener('click', () => openLb('film', i));
+    grid.appendChild(b);
+  });
+  const boards = ['All', ...new Set(FILM.map(f => f.board))];
+  $('#chips').innerHTML = boards.map((x, i) => `<button class="${i ? '' : 'on'}" data-b="${esc(x)}">${esc(x)}</button>`).join('');
+  $('#chips').addEventListener('click', e => {
+    const btn = e.target.closest('button'); if (!btn) return;
+    $('#chips').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === btn));
+    grid.querySelectorAll('.tile').forEach(t => t.classList.toggle('hide', btn.dataset.b !== 'All' && t.dataset.board !== btn.dataset.b));
+  });
+}
+
+function buildPalette() {
+  $('#pal').innerHTML = PALETTE.map(p => `<button class="sw" data-hex="${p.hex}"><div class="chip" style="background:${p.hex}"></div><div class="meta"><b>${esc(p.name)}</b><code>${p.hex}</code><br>${p.tag ? `<span class="tag">${p.tag}</span>` : `<span style="color:var(--dim)">from ${esc(p.from)}</span>`}</div></button>`).join('');
+  $('#pal').addEventListener('click', e => {
+    const s = e.target.closest('.sw'); if (!s) return;
+    const hex = s.dataset.hex;
+    try { navigator.clipboard.writeText(hex).then(() => toast(hex + ' copied'), () => toast(hex)); } catch (_) { toast(hex); }
+  });
+}
+
+let tt;
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 1400); }
+
+// ---------- lightbox ----------
+let cur = { set: 'direct', i: 0 };
+function visible(set) { // respects the film filter
+  if (set !== 'film') return items[set].map((_, i) => i);
+  const tiles = [...$('#filmGrid').children];
+  return tiles.map((t, i) => t.classList.contains('hide') ? -1 : i).filter(i => i >= 0);
+}
+function render() {
+  const list = visible(cur.set), e = items[cur.set][cur.i], pos = list.indexOf(cur.i);
+  $('#lbCount').textContent = `${cur.set === 'direct' ? 'Direct' : 'Film'} · ${pos + 1} / ${list.length}`;
+  $('#lbStage').innerHTML = e.img
+    ? `<img src="${e.img}" alt="${esc(e.title)}">`
+    : `<div class="noimg"><div class="big" style="color:${e.tint ? e.tint[1] : 'var(--glow)'}">${esc(e.title)}</div><p style="color:var(--dim)">${e.file ? 'Frame not added yet. Save one as <code>' + esc(e.file) + '</code>.' : 'Screenshot not added yet.'}</p></div>`;
+  $('#lbInfo').innerHTML = `<i>${esc(e.label)}${e.credit ? ' · ' + esc(e.credit) : ''}</i><h4>${esc(e.title)}</h4><p>${esc(e.note)}</p>` +
+    (e.links.length ? `<div class="links">${e.links.map(l => `<a href="${l.href}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join('')}</div>` : '');
+  const nxt = items[cur.set][list[(pos + 1) % list.length]];
+  if (nxt && nxt.img) { const p = new Image(); p.src = nxt.img; }
+}
+function openLb(set, i) { cur = { set, i }; render(); $('#lb').classList.add('open'); document.body.style.overflow = 'hidden'; $('#lbX').focus(); }
+function closeLb() { $('#lb').classList.remove('open'); document.body.style.overflow = ''; }
+function step(d) { const list = visible(cur.set), pos = list.indexOf(cur.i); cur.i = list[(pos + d + list.length) % list.length]; render(); }
+$('#lbX').onclick = closeLb; $('#lbPrev').onclick = () => step(-1); $('#lbNext').onclick = () => step(1);
+$('#lb').addEventListener('click', e => { if (e.target.id === 'lbStage' || e.target.id === 'lb') closeLb(); });
+addEventListener('keydown', e => {
+  if (!$('#lb').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowRight') step(1); else if (e.key === 'ArrowLeft') step(-1);
+});
+let sx = null, sy = null;
+$('#lbStage').addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+$('#lbStage').addEventListener('touchend', e => {
+  if (sx === null) return; const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1); else if (dy > 90) closeLb();
+});
+
+// ---------- nav highlight ----------
+const tabs = [...document.querySelectorAll('nav.tabs a')];
+const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) tabs.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section').forEach(s => io.observe(s));
+
+buildDirect(); buildFilm(); buildPalette();
+</script>
+</body>
+</html>
