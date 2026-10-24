@@ -74,6 +74,12 @@
     .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
     .chips button { font: inherit; font-size: 13px; color: var(--dim); background: none; border: 1px solid var(--line); padding: 5px 12px; border-radius: 99px; cursor: pointer; }
     .chips button.on, .chips button:hover { color: var(--ink); border-color: var(--violet); background: rgba(139,108,240,.1); }
+    .split { display: grid; gap: 22px; }
+    @media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; gap: 16px; } }
+    .grp { margin: 0 0 8px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+    .collage.half { grid-template-columns: repeat(2, 1fr); grid-auto-rows: clamp(110px, 17vw, 180px); }
+    .collage.half .tile.hero2 { grid-column: span 2; grid-row: span 2; }
+    .collage.half .tile.w { grid-column: span 2; }
     .tile .play { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(10,12,15,.55); border: 1px solid rgba(201,184,255,.6); backdrop-filter: blur(4px); transition: transform .3s, background .3s; }
     .tile .play::after { content: ""; position: absolute; left: 18px; top: 14px; border-left: 14px solid var(--ink); border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
     .tile:hover .play { transform: scale(1.12); background: rgba(139,108,240,.45); }
@@ -148,7 +154,10 @@
   <section id="direct">
     <div class="wrap">
       <h2>Direct references</h2>
-      <div class="collage" id="directGrid"></div>
+      <div class="split">
+        <div><p class="grp">My own work</p><div class="collage half" id="directMine"></div></div>
+        <div><p class="grp">Path of Exile</p><div class="collage half" id="directPoe"></div></div>
+      </div>
     </div>
   </section>
 
@@ -192,10 +201,10 @@ const DIRECT = [
   { id: 'desk-wide', size: 'hero2', label: 'overraide (2026) · my own experimental short', title: 'Opening shot', vimeo: '1235925352',
     note: 'My own experimental short (CIN506). The opening of the new film looks like this.',
     links: [{ href: 'https://vimeo.com/1235925352', text: 'Watch overraide on Vimeo ↗' }] },
+  { id: 'portal-prototype', size: 'hero2', label: 'My own work · Houdini, in progress', title: 'Portal prototype (Houdini)', video: 'img/portal-lookdev-web.mp4' },
   { id: 'poe/shaper-keyart', size: 't', label: 'Path of Exile · key art', title: 'The Shaper', credit: 'Art by Viacheslav Kotenok',
     links: [{ href: 'https://www.youtube.com/watch?v=92SpXUJEIVs', text: 'Atlas of Worlds trailer (the Shaper in motion) ↗' }] },
   { id: 'poe/portal', size: 't', label: 'Path of Exile · in game', title: 'Portal', credit: 'Grinding Gear Games' },
-  { id: 'portal-prototype', size: 'w t', label: 'My own work · Houdini, in progress', title: 'Portal prototype (Houdini)', video: 'img/portal-lookdev-web.mp4' },
   { id: 'poe/shaper-cinematic', size: 'w', label: 'Path of Exile · cinematic', title: 'Shaper and beam close up', credit: 'Grinding Gear Games' },
   { id: 'poe/shaper-beam', label: 'Path of Exile · in game', title: 'The Shaper\'s beam', credit: 'Grinding Gear Games' },
   { id: 'poe/shaper-ingame', label: 'Path of Exile · in game', title: 'The Shaper, in game', credit: 'Grinding Gear Games' },
@@ -280,8 +289,9 @@ function buildRefs(list, set, grid) {
 }
 
 function buildDirect() {
-  const grid = $('#directGrid');
+  const mine = $('#directMine'), poeGrid = $('#directPoe');
   DIRECT.forEach(d => {
+    const grid = (d.poe || (d.id && d.id.startsWith('poe/'))) ? poeGrid : mine;
     const entry = { label: d.label, title: d.title, note: d.note, credit: d.credit, links: d.links || [], img: null };
     if (d.id) {
       entry.img = `img/${d.id}.jpg`;
