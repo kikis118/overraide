@@ -52,6 +52,9 @@
     .tile { position: relative; overflow: hidden; border-radius: 6px; background: var(--panel); border: 1px solid var(--line); cursor: zoom-in; grid-column: span 1; grid-row: span 1; padding: 0; color: inherit; font: inherit; text-align: left; }
     .tile.w { grid-column: span 2; }
     .tile.t { grid-row: span 2; }
+    .tile.xw { grid-column: span 2; }
+    @media (min-width: 700px) { .tile.xw { grid-column: span 4; } }
+    @media (min-width: 1100px) { .tile.xw { grid-column: span 4; } }
     @media (min-width: 700px) { .tile.hero2 { grid-column: span 2; grid-row: span 2; } }
     @media (min-width: 1100px) { .tile.hero2 { grid-column: span 3; grid-row: span 3; } .tile.w { grid-column: span 2; } }
     .tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .4s; filter: saturate(.95); }
@@ -188,7 +191,7 @@ const DIRECT = [
   { id: 'poe/shaper-keyart', size: 't', label: 'Path of Exile · key art', title: 'The Shaper', credit: 'Art by Viacheslav Kotenok',
     links: [{ href: 'https://www.youtube.com/watch?v=92SpXUJEIVs', text: 'Atlas of Worlds trailer (the Shaper in motion) ↗' }] },
   { id: 'poe/portal', size: 't', label: 'Path of Exile · in game', title: 'Portal', credit: 'Grinding Gear Games' },
-  { id: 'portal-prototype', size: 'w', label: 'My own work · Houdini, in progress', title: 'Portal prototype' },
+  { id: 'portal-prototype', size: 'xw', label: 'My own work · Houdini, in progress', title: 'Portal prototype (Houdini)' },
   { id: 'poe/shaper-cinematic', size: 'w', label: 'Path of Exile · cinematic', title: 'Shaper and beam close up', credit: 'Grinding Gear Games' },
   { id: 'poe/shaper-beam', label: 'Path of Exile · in game', title: 'The Shaper\'s beam', credit: 'Grinding Gear Games' },
   { id: 'poe/shaper-ingame', label: 'Path of Exile · in game', title: 'The Shaper, in game', credit: 'Grinding Gear Games' },
